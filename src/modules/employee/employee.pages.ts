@@ -1,0 +1,93 @@
+import {
+  build_feature_shell_page,
+  type KirletPageDecl,
+} from "@opus-perpetuus/imperium-core-kit";
+
+const API = "api://m/subject-rh";
+
+export const employee_pages: KirletPageDecl[] = [
+  {
+    id: "rh.employee",
+    path: "employee",
+    permission: "subject.rh.employee.read",
+    build: () =>
+      build_feature_shell_page({
+        id: "rh.employee",
+        owner: "subject-rh",
+        title: "Empleados",
+        props: {
+          basePath: "employee",
+          idKey: "id",
+          nameKey: "name",
+          view: {
+            title: "Empleados",
+            subtitle: "Submenú de rh",
+            pluralLabel: "empleados",
+            singularLabel: "empleados",
+            emptyTitle: "Sin registros",
+            emptyDescription: "Migra desde Mongo o crea el primero",
+          },
+          data: {
+            list: `${API}/employee`,
+            record: `${API}/employee/:id`,
+            create: { method: "POST", action: `${API}/employee` },
+            update: { method: "PATCH", action: `${API}/employee/:id` },
+            delete: { method: "DELETE", action: `${API}/employee/:id` },
+          },
+          table: {
+            columns: [
+              { key: "name", label: "Nombre", sortable: true, priority: 1 },
+              { key: "is_active", label: "Activo", sortable: true, priority: 2 },
+              { key: "ref", label: "Ref", sortable: true, priority: 3 },
+              { key: "image", label: "image", sortable: true, priority: 3 },
+              { key: "department", label: "department", sortable: true, priority: 3 },
+              { key: "branch_office", label: "branch office", sortable: true, priority: 3 },
+              { key: "state_id", label: "state id", sortable: true, priority: 3 },
+              { key: "municipality", label: "municipality", sortable: true, priority: 3 },
+              { key: "boroughs", label: "boroughs", sortable: true, priority: 3 },
+            ],
+            fillHeight: true,
+            serverQuery: true,
+          },
+          form: {
+            fields: [
+              { name: "name", component: "input-text", label: "Nombre", required: true },
+              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "ref", component: "input-text", label: "Referencia (_ref)" },
+              { name: "image", component: "input-text", label: "image" },
+              { name: "department", component: "input-text", label: "department" },
+              { name: "branch_office", component: "input-text", label: "branch office" },
+              { name: "state_id", component: "input-text", label: "state id" },
+              { name: "municipality", component: "input-text", label: "municipality" },
+              { name: "boroughs", component: "input-text", label: "boroughs" },
+              { name: "street", component: "input-text", label: "street" },
+              { name: "exterior_number", component: "input-text", label: "exterior number" },
+              { name: "interior_number", component: "input-text", label: "interior number" },
+              { name: "postal_code", component: "input-text", label: "postal code" },
+              { name: "country", component: "input-text", label: "country" },
+              { name: "puesto", component: "input-text", label: "puesto" },
+              { name: "rfc", component: "input-text", label: "rfc" },
+              { name: "curp", component: "input-text", label: "curp" },
+              { name: "nss", component: "input-text", label: "nss" },
+              { name: "num_empleado", component: "input-text", label: "num empleado" },
+              { name: "fecha_nacimiento", component: "input-text", label: "fecha nacimiento" },
+              { name: "sexo", component: "input-text", label: "sexo" },
+              { name: "fecha_ingreso", component: "input-text", label: "fecha ingreso" },
+              { name: "fecha_baja", component: "input-text", label: "fecha baja" },
+              { name: "tipo_contrato", component: "input-text", label: "tipo contrato" },
+              { name: "tipo_regimen", component: "input-text", label: "tipo regimen" },
+              { name: "tipo_jornada", component: "input-text", label: "tipo jornada" },
+              { name: "riesgo_puesto", component: "input-text", label: "riesgo puesto" },
+              { name: "periodicidad_pago", component: "input-text", label: "periodicidad pago" },
+              { name: "clave_ent_fed", component: "input-text", label: "clave ent fed" },
+              { name: "salario_diario", component: "input-text", label: "salario diario" },
+              { name: "sdi", component: "input-text", label: "sdi" },
+              { name: "banco", component: "input-text", label: "banco" },
+              { name: "cuenta", component: "input-text", label: "cuenta" },
+              { name: "clabe", component: "input-text", label: "clabe" },
+            ],
+          },
+        },
+      }),
+  },
+];
