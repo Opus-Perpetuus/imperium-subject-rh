@@ -1,7 +1,7 @@
 {
   "id": "SUBJECT-rh",
   "technicalId": "subject-rh",
-  "name": "RH",
+  "name": "Recursos Humanos",
   "version": "0.1.0",
   "image": "ghcr.io/opus-perpetuus/subject-rh:0.1.0",
   "compat": {
