@@ -8,8 +8,8 @@ import { SUBJECT } from "./subject.ts";
 
 describe("subject-rh conformance", () => {
   test("catalog name meets ModuleManagement minlength of 3", () => {
-    expect(SUBJECT.name.length).toBeGreaterThanOrEqual(3);
-    expect(SUBJECT.name).toBe("Recursos Humanos");
+    expect(SUBJECT.input.name.length).toBeGreaterThanOrEqual(3);
+    expect(SUBJECT.input.name).toBe("Recursos Humanos");
   });
 
   test("layout + manifest", () => {
