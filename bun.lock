@@ -5,8 +5,8 @@
     "": {
       "name": "subject-rh",
       "dependencies": {
-        "@opus-perpetuus/imperium-core-kit": "file:../../kit",
-        "@opus-perpetuus/kirel-nox-kit": "file:../../kit",
+        "@opus-perpetuus/imperium-core-kit": "file:./vendor/kit",
+        "@opus-perpetuus/kirel-nox-kit": "file:./vendor/kit",
       },
       "devDependencies": {
         "@types/bun": "^1.2.8",
@@ -34,9 +34,9 @@
 
     "@exodus/bytes": ["@exodus/bytes@1.15.1", "", { "peerDependencies": { "@noble/hashes": "^1.8.0 || ^2.0.0" }, "optionalPeers": ["@noble/hashes"] }, "sha512-S6mL0yNB/Abt9Ei4tq8gDhcczc4S3+vQ4ra7vxnAf+YHC02srtqxKKZghx2Dq6p0e66THKwR6r8N6P95wEty7Q=="],
 
-    "@opus-perpetuus/imperium-core-kit": ["@opus-perpetuus/imperium-core-kit@file:../../kit", { "devDependencies": { "@types/bun": "^1.2.8", "isomorphic-dompurify": "^3.20.0", "typescript": "^5.7.3" } }],
+    "@opus-perpetuus/imperium-core-kit": ["@opus-perpetuus/imperium-core-kit@file:vendor/kit", { "devDependencies": { "@types/bun": "^1.2.8", "isomorphic-dompurify": "^3.20.0", "typescript": "^5.7.3" } }],
 
-    "@opus-perpetuus/kirel-nox-kit": ["@opus-perpetuus/imperium-core-kit@file:../../kit", { "devDependencies": { "@types/bun": "^1.2.8", "isomorphic-dompurify": "^3.20.0", "typescript": "^5.7.3" } }],
+    "@opus-perpetuus/kirel-nox-kit": ["@opus-perpetuus/imperium-core-kit@file:vendor/kit", { "devDependencies": { "@types/bun": "^1.2.8", "isomorphic-dompurify": "^3.20.0", "typescript": "^5.7.3" } }],
 
     "@types/bun": ["@types/bun@1.4.0", "", { "dependencies": { "bun-types": "1.4.0" } }, "sha512-K+lZULY23vRgK/CfTjFIV+tyifaNdSMlPh9j+6mQ/cLfpOznLyAuzgV/JQysyECpkBQLVMSyvjlr2fBUSA9wFQ=="],
 

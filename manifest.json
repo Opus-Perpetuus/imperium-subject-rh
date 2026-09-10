@@ -71,6 +71,85 @@
       "label": "Editar Conceptos de nómina"
     }
   ],
+  "menu": [
+    {
+      "id": "rh.root",
+      "label": "RH",
+      "order": 0,
+      "children": [
+        {
+          "id": "rh.departments",
+          "label": "Departamentos",
+          "pageId": "rh.departments",
+          "order": 0,
+          "path": "departments",
+          "permission": "subject.rh.departments.read",
+          "icon": "document"
+        },
+        {
+          "id": "rh.employee",
+          "label": "Empleados",
+          "pageId": "rh.employee",
+          "order": 0,
+          "path": "employee",
+          "permission": "subject.rh.employee.read",
+          "icon": "document"
+        },
+        {
+          "id": "rh.folder.nomina-menu-management-0",
+          "label": "Nómina",
+          "order": 20,
+          "children": [
+            {
+              "id": "rh.payroll-concept",
+              "label": "Conceptos de nómina",
+              "pageId": "rh.payroll-concept",
+              "order": 10,
+              "path": "payroll-concept",
+              "permission": "subject.rh.payroll-concept.read",
+              "icon": "document"
+            },
+            {
+              "id": "rh.labor-schedule",
+              "label": "Horarios laborales",
+              "pageId": "rh.labor-schedule",
+              "order": 20,
+              "path": "labor-schedule",
+              "permission": "subject.rh.labor-schedule.read",
+              "icon": "document"
+            },
+            {
+              "id": "rh.labor-incident",
+              "label": "Incidencias laborales",
+              "pageId": "rh.labor-incident",
+              "order": 30,
+              "path": "labor-incident",
+              "permission": "subject.rh.labor-incident.read",
+              "icon": "document"
+            },
+            {
+              "id": "rh.payroll-period",
+              "label": "Periodos de nómina",
+              "pageId": "rh.payroll-period",
+              "order": 40,
+              "path": "payroll-period",
+              "permission": "subject.rh.payroll-period.read",
+              "icon": "document"
+            },
+            {
+              "id": "rh.payroll-receipt",
+              "label": "Recibos de nómina",
+              "pageId": "rh.payroll-receipt",
+              "order": 50,
+              "path": "payroll-receipt",
+              "permission": "subject.rh.payroll-receipt.read",
+              "icon": "document"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "pages": [
     {
       "id": "rh.departments",
@@ -108,88 +187,17 @@
       "permission": "subject.rh.payroll-concept.read"
     }
   ],
-  "menu": [
-    {
-      "id": "rh.root",
-      "label": "RH",
-      "order": 0,
-      "children": [
-        {
-          "id": "rh.departments",
-          "label": "Departamentos",
-          "order": 0,
-          "pageId": "rh.departments",
-          "path": "departments",
-          "permission": "subject.rh.departments.read"
-        },
-        {
-          "id": "rh.employee",
-          "label": "Empleados",
-          "order": 0,
-          "pageId": "rh.employee",
-          "path": "employee",
-          "permission": "subject.rh.employee.read"
-        },
-        {
-          "id": "rh.folder.nomina-menu-management-0",
-          "label": "Nómina",
-          "order": 20,
-          "children": [
-            {
-              "id": "rh.payroll-concept",
-              "label": "Conceptos de nómina",
-              "order": 10,
-              "pageId": "rh.payroll-concept",
-              "path": "payroll-concept",
-              "permission": "subject.rh.payroll-concept.read"
-            },
-            {
-              "id": "rh.labor-schedule",
-              "label": "Horarios laborales",
-              "order": 20,
-              "pageId": "rh.labor-schedule",
-              "path": "labor-schedule",
-              "permission": "subject.rh.labor-schedule.read"
-            },
-            {
-              "id": "rh.labor-incident",
-              "label": "Incidencias laborales",
-              "order": 30,
-              "pageId": "rh.labor-incident",
-              "path": "labor-incident",
-              "permission": "subject.rh.labor-incident.read"
-            },
-            {
-              "id": "rh.payroll-period",
-              "label": "Periodos de nómina",
-              "order": 40,
-              "pageId": "rh.payroll-period",
-              "path": "payroll-period",
-              "permission": "subject.rh.payroll-period.read"
-            },
-            {
-              "id": "rh.payroll-receipt",
-              "label": "Recibos de nómina",
-              "order": 50,
-              "pageId": "rh.payroll-receipt",
-              "path": "payroll-receipt",
-              "permission": "subject.rh.payroll-receipt.read"
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "storage": {
-    "domain": "shared-nox-postgres"
+    "domain": "shared-nox-postgres",
+    "files": false
   },
   "resources": {
     "departments": "departments",
     "employee": "employee",
-    "payroll-receipt": "payroll_receipt",
-    "labor-schedule": "labor_schedule",
-    "labor-incident": "labor_incident",
-    "payroll-period": "payroll_period",
-    "payroll-concept": "payroll_concept"
+    "payroll-receipt": "payroll-receipt",
+    "labor-schedule": "labor-schedule",
+    "labor-incident": "labor-incident",
+    "payroll-period": "payroll-period",
+    "payroll-concept": "payroll-concept"
   }
 }
