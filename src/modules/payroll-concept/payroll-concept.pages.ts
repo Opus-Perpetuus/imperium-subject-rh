@@ -51,10 +51,19 @@ export const payroll_concept_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
               { name: "clave_interna", component: "input-text", label: "clave interna" },
-              { name: "categoria", component: "input-text", label: "categoria" },
+              {
+                name: "categoria",
+                component: "input-menu",
+                label: "categoria",
+                options: [
+                  { value: "perception", label: "Percepción" },
+                  { value: "deduction", label: "Deducción" },
+                  { value: "other_payment", label: "Otro pago" },
+                ],
+              },
               { name: "tipo_sat", component: "input-text", label: "tipo sat" },
               { name: "concepto_default", component: "input-text", label: "concepto default" },
               { name: "is_system", component: "input-checkbox", label: "is system" },
