@@ -60,16 +60,9 @@ export const payroll_receipt_pages: KirletPageDecl[] = [
               { name: "num_dias_pagados", component: "input-number", label: "num dias pagados" },
               {
                 name: "estado",
-                component: "input-menu",
+                component: "input-status",
                 label: "estado",
-                options: [
-                  { value: "draft", label: "Borrador" },
-                  { value: "calculated", label: "Calculado" },
-                  { value: "ready_to_stamp", label: "Listo para timbrar" },
-                  { value: "stamping", label: "Timbrando" },
-                  { value: "stamped", label: "Timbrado" },
-                  { value: "error", label: "Error" },
-                ],
+                // Opciones: status-option-control (seed en status-seeds.ts).
               },
               { name: "lineas", component: "input-json", label: "lineas" },
               { name: "total_percepciones", component: "input-money", label: "total percepciones" },

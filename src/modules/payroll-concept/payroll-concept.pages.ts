@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-rh";
 
@@ -58,11 +59,11 @@ export const payroll_concept_pages: KirletPageDecl[] = [
                 name: "categoria",
                 component: "input-menu",
                 label: "categoria",
-                options: [
-                  { value: "perception", label: "Percepción" },
-                  { value: "deduction", label: "Deducción" },
-                  { value: "other_payment", label: "Otro pago" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-rh/payroll-concept",
+                  "categoria",
+                ),
               },
               { name: "tipo_sat", component: "input-text", label: "tipo sat" },
               { name: "concepto_default", component: "input-text", label: "concepto default" },

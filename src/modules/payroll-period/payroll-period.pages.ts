@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-rh";
 
@@ -58,10 +59,11 @@ export const payroll_period_pages: KirletPageDecl[] = [
                 name: "tipo_nomina",
                 component: "input-menu",
                 label: "tipo nomina",
-                options: [
-                  { value: "O", label: "O — Ordinaria" },
-                  { value: "E", label: "E — Extraordinaria" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-rh/payroll-period",
+                  "tipo_nomina",
+                ),
               },
               { name: "fecha_pago", component: "input-date", label: "fecha pago" },
               { name: "fecha_inicial", component: "input-date", label: "fecha inicial" },
@@ -71,30 +73,17 @@ export const payroll_period_pages: KirletPageDecl[] = [
                 name: "periodicidad_pago",
                 component: "input-menu",
                 label: "periodicidad pago",
-                options: [
-                  { value: "01", label: "01 — Diario" },
-                  { value: "02", label: "02 — Semanal" },
-                  { value: "03", label: "03 — Catorcenal" },
-                  { value: "04", label: "04 — Quincenal" },
-                  { value: "05", label: "05 — Mensual" },
-                  { value: "06", label: "06 — Bimestral" },
-                  { value: "07", label: "07 — Unidad obra" },
-                  { value: "08", label: "08 — Comisión" },
-                  { value: "09", label: "09 — Precio alzado" },
-                  { value: "10", label: "10 — Decenal" },
-                  { value: "99", label: "99 — Otra Periodicidad" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-rh/payroll-period",
+                  "periodicidad_pago",
+                ),
               },
               {
                 name: "estado",
-                component: "input-menu",
+                component: "input-status",
                 label: "estado",
-                options: [
-                  { value: "draft", label: "Borrador" },
-                  { value: "open", label: "Abierto" },
-                  { value: "closed", label: "Cerrado" },
-                  { value: "generating", label: "Generando recibos" },
-                ],
+                // Opciones: status-option-control (seed en status-seeds.ts).
               },
               { name: "branch_office", component: "input-datalist", label: "branch office", optionsSource: "api://m/subject-configuracion/branchoffice?as=options&limite=1000" },
               { name: "receipts_count", component: "input-number", label: "receipts count" },

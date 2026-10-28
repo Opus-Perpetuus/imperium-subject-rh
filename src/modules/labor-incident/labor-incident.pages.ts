@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-rh";
 
@@ -59,19 +60,11 @@ export const labor_incident_pages: KirletPageDecl[] = [
                 name: "tipo",
                 component: "input-menu",
                 label: "tipo",
-                options: [
-                  { value: "absence", label: "Falta" },
-                  { value: "late", label: "Retardo" },
-                  { value: "overtime", label: "Horas extra" },
-                  { value: "vacation", label: "Vacaciones" },
-                  { value: "disability", label: "Incapacidad" },
-                  { value: "permission_paid", label: "Permiso con goce" },
-                  { value: "permission_unpaid", label: "Permiso sin goce" },
-                  { value: "bonus", label: "Bono / prima" },
-                  { value: "loan_infonavit", label: "Crédito INFONAVIT" },
-                  { value: "other_deduction", label: "Otra deducción" },
-                  { value: "termination", label: "Baja / finiquito" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-rh/labor-incident",
+                  "tipo",
+                ),
               },
               { name: "fecha_inicio", component: "input-date", label: "fecha inicio" },
               { name: "fecha_fin", component: "input-date", label: "fecha fin" },
@@ -82,12 +75,11 @@ export const labor_incident_pages: KirletPageDecl[] = [
                 name: "tipo_incapacidad",
                 component: "input-menu",
                 label: "tipo incapacidad",
-                options: [
-                  { value: "01", label: "01 — Riesgo de trabajo" },
-                  { value: "02", label: "02 — Enfermedad en general" },
-                  { value: "03", label: "03 — Maternidad" },
-                  { value: "04", label: "04 — Licencia por cuidados médicos de hijos" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-rh/labor-incident",
+                  "tipo_incapacidad",
+                ),
               },
               { name: "notas", component: "input-textarea", label: "notas" },
               { name: "payroll_period", component: "input-datalist", label: "payroll period", optionsSource: "api://m/subject-rh/payroll-period?as=options&limite=1000" },
